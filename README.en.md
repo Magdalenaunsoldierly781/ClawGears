@@ -1,46 +1,70 @@
-# ⚙️ ClawGears
+<div align="center">
 
-> **Protect Your Mac, Guard Your Privacy** - The Security Audit Tool Built for OpenClaw
+# 🦞 ClawGears
 
-[![License](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
-[![Platform](https://img.shields.io/badge/platform-macOS-lightgrey)](https://github.com/JinHanAI/clawgears)
-[![Version](https://img.shields.io/badge/version-1.1.0-green)](https://github.com/JinHanAI/clawgears)
+### **Protect Your Mac, Guard Your Privacy**
+
+**The Security Audit Tool Built for OpenClaw**
+
+[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](./LICENSE)
+[![Platform](https://img.shields.io/badge/platform-macOS-lightgrey?style=for-the-badge&logo=apple)](https://github.com/JinHanAI/clawgears)
+[![Version](https://img.shields.io/badge/version-1.1.0-green?style=for-the-badge)](https://github.com/JinHanAI/clawgears)
 
 [中文文档](./README.md) | **English Documentation**
 
----
-
-## ⚠️ Is Your OpenClaw Secure?
-
-**If your OpenClaw shows any of these signs, your privacy may be at risk:**
-
-| Risk | Consequence | Severity |
-|------|-------------|----------|
-| 🔓 Gateway exposed to public | Anyone can access your AI assistant | Critical |
-| 🔑 Weak or leaked token | API keys stolen, unexpected charges | Severe |
-| 📷 Camera/screen accessible | Privacy compromised | Severe |
-| 💾 Full Disk Access granted | All files accessible | High Risk |
-| 🌐 IP in leak database | Already targeted by hackers | High Risk |
-
-**Statistics show 220,000+ OpenClaw instances are exposed publicly. Many API keys have already been leaked.**
+</div>
 
 ---
 
-## 🎯 Who Should Use This Tool?
+## ⚠️ Is Your OpenClaw Exposed?
 
-### ✅ Perfect for You if:
+> **Statistics show: 220,000+ OpenClaw instances are exposed publicly. Many API keys have already been leaked to hacker databases.**
 
-- You run OpenClaw / MoltBot / ClawdBot on **Mac**
-- You're concerned about **AI assistant security**
-- Your OpenClaw **connects to external services** (Feishu, Telegram, WhatsApp)
-- Your Mac stores **sensitive data** (work files, personal photos)
-- You want **regular security checks** before problems occur
+### If you see any of these signs, your privacy may be at risk:
 
-### ❌ Not for You if:
+| 🚨 Risk | 💥 Consequence | ⚡ Severity |
+|:--------|:---------------|:-----------:|
+| **Gateway exposed to public** | Anyone can access your AI assistant | 🔴 Critical |
+| **Weak or leaked token** | API keys stolen, unexpected charges | 🟠 Severe |
+| **Camera/screen accessible** | Privacy compromised, screenshots taken | 🟠 Severe |
+| **Full Disk Access granted** | All files accessible by AI | 🟡 High Risk |
+| **IP in leak database** | Already targeted by hackers | 🟡 High Risk |
 
-- You don't use OpenClaw or similar AI assistants
-- Your OpenClaw runs in a **completely isolated** environment
-- You already have a professional security team
+---
+
+## 🎯 What Can ClawGears Do for You?
+
+### ✅ 5-Second Quick Check
+
+```bash
+./scripts/quick-check.sh
+```
+
+**One command checks 5 critical security items:**
+- 🔒 Is Gateway exposed to public network
+- 🔑 Is Token strength sufficient
+- 📷 Are sensitive commands blocked
+- 💾 Are TCC permissions reasonable
+- 🌐 Is your IP already leaked
+
+### ✅ Auto-Fix Issues
+
+```bash
+./scripts/interactive-fix.sh
+```
+
+**One-click fix common problems:**
+- Rebind Gateway to localhost
+- Generate new strong Token
+- Add sensitive command blacklist
+
+### ✅ IP Leak Detection
+
+```bash
+./scripts/ip-leak-check.sh --all
+```
+
+**Exclusive Feature:** Integrated with `openclaw.allegro.earth` database to check if your IP has been leaked
 
 ---
 
@@ -49,18 +73,18 @@
 ### 🏆 Key Advantages
 
 | Advantage | Description |
-|-----------|-------------|
-| **🎯 OpenClaw Focused** | Designed specifically for OpenClaw, deeper checks |
-| **🔒 Privacy-First** | Not just system security, but privacy protection |
-| **🌐 IP Leak Detection** | Only tool integrated with openclaw.allegro.earth |
-| **🔧 One-Click Fix** | Auto-fix issues, no manual intervention needed |
-| **📊 History Tracking** | Track security trends, compare changes |
-| **🤖 CI/CD Ready** | GitHub Actions automation included |
+|:----------|:------------|
+| 🎯 **OpenClaw Focused** | Designed specifically for OpenClaw, deeper and more precise checks |
+| 🔒 **Privacy-First** | Not just system security, but privacy leak risks |
+| 🌐 **IP Leak Detection** | **The only** tool integrated with leak database |
+| 🔧 **One-Click Fix** | Auto-fix issues, no manual intervention needed |
+| 📊 **History Tracking** | Record every audit result, track security trends |
+| 🤖 **CI/CD Ready** | GitHub Actions automation included |
 
 ### 🆚 Comparison with Alternatives
 
-| Feature | ClawGears | Generic Security Tools |
-|---------|:-----------------------:|:----------------------:|
+| Feature | <img src="https://img.shields.io/badge/ClawGears-🦞-red?style=flat-square" /> | Generic Security Tools |
+|:--------|:-----------------------:|:----------------------:|
 | OpenClaw Deep Check | ✅ | ❌ |
 | IP Leak Detection | ✅ | ❌ |
 | TCC Permission Audit | ✅ | ❌ |
@@ -74,32 +98,66 @@
 
 ## 📈 What You'll Get
 
+<table>
+<tr>
+<td width="50%" valign="top">
+
 ### 🛡️ Security Assurance
-- ✅ **Gateway Security** - Ensure localhost-only binding
-- ✅ **Token Security** - Strong keys, prevent unauthorized use
+
+- ✅ **Gateway Security** - Localhost-only binding
+- ✅ **Token Security** - Strong key protection
 - ✅ **Permission Control** - Block FDA unauthorized access
-- ✅ **Command Protection** - Block camera, screen, and other sensitive operations
+- ✅ **Command Protection** - Block camera, screen operations
+
+</td>
+<td width="50%" valign="top">
 
 ### 🔍 Risk Discovery
-- ✅ **IP Leak Detection** - Check if your IP is in hacker databases
-- ✅ **Port Exposure** - Find accidentally exposed service ports
+
+- ✅ **IP Leak Detection** - Check if in hacker databases
+- ✅ **Port Exposure** - Find accidentally exposed ports
 - ✅ **Suspicious Connections** - Detect unusual network activity
 
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
 ### 📊 Continuous Monitoring
+
 - ✅ **History Tracking** - Record every audit result
 - ✅ **Trend Analysis** - Understand security posture changes
-- ✅ **Automation** - CI/CD integration for scheduled checks
+- ✅ **Automation** - CI/CD scheduled checks
+
+</td>
+<td width="50%" valign="top">
 
 ### ⏱️ Time Savings
+
 - ✅ **Quick Check** - 5 seconds for critical items
 - ✅ **One-Click Fix** - Auto-fix common issues
 - ✅ **Report Generation** - Professional reports in one click
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## 🚀 Quick Start
 
-### 1-Minute Quick Check
+### 📋 Who Should Use This?
+
+| ✅ Perfect for You | ❌ Not for You |
+|:-------------------|:---------------|
+| Run OpenClaw / MoltBot / ClawdBot on **Mac** | Don't use OpenClaw or similar AI assistants |
+| Concerned about **AI assistant security** | OpenClaw runs in **completely isolated** environment |
+| OpenClaw **connects to external services** (Feishu, Telegram) | Already have a professional security team |
+| Mac stores **sensitive data** (work files, personal photos) | |
+| Want **regular security checks** | |
+
+### ⚡ 1-Minute Quick Check
+
 ```bash
 # Clone the repository
 git clone https://github.com/JinHanAI/clawgears.git
@@ -109,17 +167,20 @@ cd clawgears
 ./scripts/quick-check.sh
 ```
 
-### Check IP Leak
+### 🔍 Check IP Leak
+
 ```bash
 ./scripts/ip-leak-check.sh --all
 ```
 
-### Full Audit
+### 📊 Full Audit Report
+
 ```bash
 ./scripts/generate-report.sh --format html --output ./reports
 ```
 
-### Found Issues? One-Click Fix
+### 🔧 Found Issues? One-Click Fix
+
 ```bash
 ./scripts/interactive-fix.sh
 ```
@@ -128,9 +189,10 @@ cd clawgears
 
 ## 📋 Feature Checklist
 
-### Security Checks
+### 🔐 Security Checks
+
 | Check | Description |
-|-------|-------------|
+|:------|:------------|
 | Network Exposure | Gateway port binding, Tailscale status |
 | Token Security | Length, configuration validation |
 | Command Injection Protection | denyCommands configuration |
@@ -142,14 +204,22 @@ cd clawgears
 | Log Audit | Anomaly detection |
 | System Security | Firewall, FileVault, SIP |
 
-### Fix Features
+### 🔧 Fix Features
+
 | Feature | Command |
-|---------|---------|
+|:--------|:--------|
 | Fix Gateway Exposure | `--bind` |
 | Generate New Token | `--token` |
 | Add Deny Commands | `--deny` |
 | Restart Gateway | `--restart` |
 | Fix All | `--all` |
+
+---
+
+## 📚 Documentation
+
+- **中文文档**: [README.md](./README.md)
+- **English Documentation**: [README.en.md](./README.en.md)
 
 ---
 
