@@ -2,7 +2,7 @@
 # OpenClaw Security Audit - GitHub Actions CI/CD
 # =============================================================================
 # Description: Automatically run security audit on schedule and on push
-# Author: Chen Zong
+# Author: Victor.Chen
 # Version: 1.0.0
 # Created: 2026-03-10
 # =============================================================================

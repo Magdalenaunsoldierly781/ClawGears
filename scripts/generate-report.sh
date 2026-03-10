@@ -3,7 +3,7 @@
 # OpenClaw Security Audit - Report Generator
 # =============================================================================
 # Description: Generate HTML/JSON audit reports
-# Author: Chen Zong
+# Author: Victor.Chen
 # Version: 1.0.0
 # Created: 2026-03-10
 # =============================================================================

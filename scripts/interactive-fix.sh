@@ -3,7 +3,7 @@
 # OpenClaw Security Audit - Interactive Fix Script
 # =============================================================================
 # Description: Interactive fix with user confirmation for each action
-# Author: Chen Zong
+# Author: Victor.Chen
 # Version: 1.0.0
 # Created: 2026-03-10
 # =============================================================================
