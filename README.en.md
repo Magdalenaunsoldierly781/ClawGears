@@ -1,256 +1,182 @@
-# OpenClaw Security Audit
+# 🦞 OpenClaw Security Audit
 
-[![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/yourusername/openclaw-security-audit/blob/main/LICENSE)
-[![Platform](https://img.shields.io/badge/platform-macOS-lightgrey)](https://github.com/yourusername/openclaw-security-audit)
-[![Language](https://img.shields.io/badge/language-中文%20English-blue)](https://github.com/yourusername/openclaw-security-audit)
+> **Protect Your Mac,Guard Your Privacy** - The Security Audit Tool Built for OpenClaw
 
-> A comprehensive security audit tool for OpenClaw on macOS. Protect your privacy, secure your Mac.
+[![License](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
+[![Platform](https://img.shields.io/badge/platform-macOS-lightgrey)](https://github.com/JinHanAI/openclaw-security-audit)
+[![Version](https://img.shields.io/badge/version-1.1.0-green)](https://github.com/JinHanAI/openclaw-security-audit)
 
-**中文文档** | [Chinese Documentation](./README.md)
-
----
-
-## 🔒 Why This Tool?
-
-Running OpenClaw on macOS is powerful, but without proper security configuration, it can expose your privacy:
-
-- 🌐 **Network Exposure** - Gateway ports accessible to the whole network
-- 🔑 **Token Leakage** - Weak authentication tokens easily guessed
-- 📷 **Privacy Invasion** - Full Disk Access grants access to sensitive data
-- ☁️ **iCloud Sync** - Sensitive files synced to cloud without consent
-
-This tool helps you identify and fix these security issues before they become problems.
+[中文文档](./README.md) | **English Documentation**
 
 ---
 
-## ✨ Features
+## ⚠️ Is Your OpenClaw Secure?
 
-| Feature | Description |
-|---------|-------------|
-| **Network Exposure Check** | Verify Gateway only binds to localhost |
-| **Token Security** | Check token length and configuration |
-| **Command Injection Protection** | Audit denyCommands configuration |
-| **TCC Permissions Audit** | Monitor Full Disk Access and Accessibility permissions |
-| **iCloud Sync Check** | Detect if sensitive folders are syncing |
-| **Workspace Privacy** | Check for symlinks to sensitive directories |
-| **Network Monitoring** | Monitor external connections by domain |
-| **Log Anomaly Detection** | Detect suspicious activities in logs |
-| **Auto-Fix Scripts** | One-click fix for exposed configurations |
-| **Report Generation** | Generate HTML/JSON audit reports |
+**If your OpenClaw shows any of these signs, your privacy may be at risk:**
+
+| Risk | Consequence | Severity |
+|------|-------------|----------|
+| 🔓 Gateway exposed to public | Anyone can access your AI assistant | Critical |
+| 🔑 Weak or leaked token | API keys stolen, unexpected charges | Severe |
+| 📷 Camera/screen accessible | Privacy compromised | Severe |
+| 💾 Full Disk Access granted | All files accessible | High Risk |
+| 🌐 IP in leak database | Already targeted by hackers | High Risk |
+
+**Statistics show 220,000+ OpenClaw instances are exposed publicly. Many API keys have already been leaked.**
 
 ---
 
-## 📋 Security Checklist
+## 🎯 Who Should Use This Tool?
 
-### 1. Network Exposure Check
-```bash
-# Check Gateway port binding (MUST be localhost)
-lsof -i :18789
+### ✅ Perfect for You if:
 
-# Check Tailscale status
-tailscale status
-```
+- You run OpenClaw / MoltBot / ClawdBot on **Mac**
+- You're concerned about **AI assistant security**
+- Your OpenClaw **connects to external services** (Feishu, Telegram, WhatsApp)
+- Your Mac stores **sensitive data** (work files, personal photos)
+- You want **regular security checks** before problems occur
 
-**Pass Criteria**:
-- ✅ Only listening on `127.0.0.1` or `localhost`
-- ✅ Tailscale shows disconnected or off
+### ❌ Not for You if:
 
-### 2. Token Security Check
-```bash
-python3 -c "
-import json
-with open('$HOME/.openclaw/openclaw.json') as f:
-    cfg = json.load(f)
-    g = cfg.get('gateway', {})
-    print(f'mode: {g.get(\"mode\")}')
-    print(f'bind: {g.get(\"bind\")}')
-    t = g.get('auth', {}).get('token', '')
-    print(f'Token length: {len(t)}')
-"
-```
+- You don't use OpenClaw or similar AI assistants
+- Your OpenClaw runs in a **completely isolated** environment
+- You already have a professional security team
 
-**Pass Criteria**:
-- ✅ `mode`: "local"
-- ✅ `bind`: "loopback" or "127.0.0.1"
-- ✅ Token length >= 40
+---
 
-### 3. Command Injection Protection
-```bash
-python3 -c "
-import json
-with open('$HOME/.openclaw/openclaw.json') as f:
-    cfg = json.load(f)
-    deny = cfg.get('gateway', {}).get('nodes', {}).get('denyCommands', [])
-    print('Denied commands:')
-    for cmd in deny:
-        print(f'  ❌ {cmd}')
-"
-```
+## 💡 Why Choose OpenClaw Security Audit?
 
-**Pass Criteria**:
-- ✅ Must include: `camera.snap`, `camera.clip`, `screen.record`
-- ✅ Must include: `contacts.add`, `reminders.add`
+### 🏆 Key Advantages
 
-### 4. TCC Permissions Audit
-```bash
-python3 -c "
-import sqlite3
-conn = sqlite3.connect('/Library/Application Support/com.apple.TCC/TCC.db')
-cursor = conn.cursor()
+| Advantage | Description |
+|-----------|-------------|
+| **🎯 OpenClaw Focused** | Designed specifically for OpenClaw, deeper checks |
+| **🔒 Privacy-First** | Not just system security, but privacy protection |
+| **🌐 IP Leak Detection** | Only tool integrated with openclaw.allegro.earth |
+| **🔧 One-Click Fix** | Auto-fix issues, no manual intervention needed |
+| **📊 History Tracking** | Track security trends, compare changes |
+| **🤖 CI/CD Ready** | GitHub Actions automation included |
 
-# Full Disk Access (MUST be 0 or None)
-cursor.execute('SELECT auth_value FROM access WHERE client=\"/usr/local/bin/node\" AND service=\"kTCCServiceSystemPolicyAllFiles\"')
-r = cursor.fetchone()
-print(f'Full Disk Access: {\"❌ Granted (RISK)\" if r and r[0]==2 else \"✅ Not granted (Safe)\"}')
+### 🆚 Comparison with Alternatives
 
-# Accessibility (Required for UI automation)
-cursor.execute('SELECT auth_value FROM access WHERE client=\"/usr/local/bin/node\" AND service=\"kTCCServiceAccessibility\"')
-r = cursor.fetchone()
-print(f'Accessibility: {\"✅ Granted (Normal)\" if r and r[0]==2 else \"❌ Not granted\"}')
+| Feature | OpenClaw Security Audit | Generic Security Tools |
+|---------|:-----------------------:|:----------------------:|
+| OpenClaw Deep Check | ✅ | ❌ |
+| IP Leak Detection | ✅ | ❌ |
+| TCC Permission Audit | ✅ | ❌ |
+| iCloud Sync Check | ✅ | ❌ |
+| Auto-Fix | ✅ | ❌ |
+| Interactive Fix | ✅ | ❌ |
+| History Tracking | ✅ | ❌ |
+| Report Generation | ✅ | Partial |
 
-conn.close()
-"
-```
+---
 
-**Pass Criteria**:
-- ✅ Full Disk Access: Not granted (auth_value = 0 or None)
-- ✅ Accessibility: Granted (auth_value = 2)
+## 📈 What You'll Get
 
-### 5. iCloud Sync Check
-```bash
-ls -la ~/Documents/ ~/Pictures/ ~/Desktop/
-```
+### 🛡️ Security Assurance
+- ✅ **Gateway Security** - Ensure localhost-only binding
+- ✅ **Token Security** - Strong keys, prevent unauthorized use
+- ✅ **Permission Control** - Block FDA unauthorized access
+- ✅ **Command Protection** - Block camera, screen, and other sensitive operations
 
-**Pass Criteria**:
-- ✅ Documents, Pictures, Desktop are empty or contain only .localized
+### 🔍 Risk Discovery
+- ✅ **IP Leak Detection** - Check if your IP is in hacker databases
+- ✅ **Port Exposure** - Find accidentally exposed service ports
+- ✅ **Suspicious Connections** - Detect unusual network activity
 
-### 6. Workspace Privacy Check
-```bash
-ls -la ~/.openclaw/workspace/
-```
+### 📊 Continuous Monitoring
+- ✅ **History Tracking** - Record every audit result
+- ✅ **Trend Analysis** - Understand security posture changes
+- ✅ **Automation** - CI/CD integration for scheduled checks
 
-**Pass Criteria**:
-- ✅ Does not contain personal private files
-- ⚠️ Watch for symlinks (may point to sensitive directories)
-
-### 7. Network Connection Monitoring
-```bash
-lsof -p $(pgrep -f openclaw-gateway) -i
-```
-
-**Pass Criteria**:
-- ✅ Only connects to known AI service domains (openai, anthropic, google)
-- ✅ Only connects to configured channel services (feishu, telegram, whatsapp)
-- ❌ No unexpected external IP connections
-
-### 8. Log Anomaly Check
-```bash
-tail -50 ~/.openclaw/logs/gateway.log
-```
-
-**Pass Criteria**:
-- ✅ No massive errors or abnormal requests
-- ⚠️ WhatsApp/Telegram auto-reconnect is normal behavior
+### ⏱️ Time Savings
+- ✅ **Quick Check** - 5 seconds for critical items
+- ✅ **One-Click Fix** - Auto-fix common issues
+- ✅ **Report Generation** - Professional reports in one click
 
 ---
 
 ## 🚀 Quick Start
 
-### Using Claude Code
-```
-/openclaw-security-audit
-```
-
-Or simply ask:
-```
-"Please run the OpenClaw security audit"
-```
-
-### Manual Execution
+### 1-Minute Quick Check
 ```bash
-# Full audit
-./scripts/run-audit.sh
+# Clone the repository
+git clone https://github.com/JinHanAI/openclaw-security-audit.git
+cd openclaw-security-audit
 
-# Quick check (key items only)
-./scripts/run-audit.sh --quick
+# Quick check (5 critical items)
+./scripts/quick-check.sh
+```
 
-# Generate report
-./scripts/generate-report.sh --format html
+### Check IP Leak
+```bash
+./scripts/ip-leak-check.sh --all
+```
 
-# Auto-fix exposed configuration
-./scripts/fix-exposed-gateway.sh --all
+### Full Audit
+```bash
+./scripts/generate-report.sh --format html --output ./reports
+```
+
+### Found Issues? One-Click Fix
+```bash
+./scripts/interactive-fix.sh
 ```
 
 ---
 
-## 🔧 Auto-Fix Scripts
+## 📋 Feature Checklist
 
-### Fix Exposed Gateway
-```bash
-./scripts/fix-exposed-gateway.sh --bind
-```
-Changes Gateway bind to localhost only.
+### Security Checks
+| Check | Description |
+|-------|-------------|
+| Network Exposure | Gateway port binding, Tailscale status |
+| Token Security | Length, configuration validation |
+| Command Injection Protection | denyCommands configuration |
+| TCC Permission Audit | Full Disk Access, Accessibility |
+| Process Monitoring | Background services, unknown processes |
+| iCloud Sync Check | Documents/Pictures/Desktop |
+| Workspace Privacy | Sensitive files, symlinks |
+| Network Connection Monitoring | External domain whitelist |
+| Log Audit | Anomaly detection |
+| System Security | Firewall, FileVault, SIP |
 
-### Fix Weak Token
-```bash
-./scripts/fix-exposed-gateway.sh --token
-```
-Generates a new strong token (40+ characters).
-
-### Fix Missing Deny Commands
-```bash
-./scripts/fix-exposed-gateway.sh --deny
-```
-Adds essential commands to denyCommands list.
-
----
-
-## 📊 Report Generation
-
-### HTML Report
-```bash
-./scripts/generate-report.sh --format html --output audit-report.html
-```
-
-### JSON Report
-```bash
-./scripts/generate-report.sh --format json --output audit-report.json
-```
-
----
-
-## 📋 Risk Response Plan
-
-| Risk Scenario | Response |
-|---------------|----------|
-| Unknown IP connecting to Gateway | Restart Gateway immediately, change Token |
-| Token leaked | Generate new Token immediately, update config |
-| Suspicious process found | Kill process, check launchd services |
-| Tailscale enabled unexpectedly | Disable immediately, check config |
-| FDA permission granted | Revoke immediately |
+### Fix Features
+| Feature | Command |
+|---------|---------|
+| Fix Gateway Exposure | `--bind` |
+| Generate New Token | `--token` |
+| Add Deny Commands | `--deny` |
+| Restart Gateway | `--restart` |
+| Fix All | `--all` |
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions welcome! Please submit Pull Requests or Issues.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - See [LICENSE](./LICENSE)
 
 ---
 
-## 🙏 Acknowledgments
+## ⚠️ Disclaimer
 
-- Inspired by the need for privacy protection in AI agent environments
-- Built for OpenClaw users who care about security
-- Thanks to the OpenClaw community for feedback
+This tool is for security audit purposes only. Please understand the impact before using auto-fix features.
 
 ---
 
-## 📮 Disclaimer
+<div align="center">
 
-This tool is provided as-is for security auditing purposes. Always review the changes made by auto-fix scripts before applying them to production environments.
+**🦞 OpenClaw Security Audit**
+
+*Protect Your Mac, Guard Your Privacy*
+
+Made with ❤️ by [JinHanAI](https://github.com/JinHanAI)
+
+</div>
