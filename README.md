@@ -329,50 +329,51 @@ ClawGears now provides **scenario-based risk analysis** instead of one-size-fits
   2. FileVault Encryption Check
 ========================================
 
-📌 这个检查项的作用:
-   防止硬盘被盗/丢失后，他人读取您的数据
+📌 What this check protects:
+   Prevents data access if your disk is stolen or lost
 
 FileVault Status: FileVault is Off.
 
-⚡ 对您的实际影响:
+⚡ Real impact based on your scenario:
    ┌─────────────────────────────────────────────────────┐
-   │ 使用场景                              │ 风险程度 │
+   │ Usage Scenario                              │ Risk   │
    ├─────────────────────────────────────────────────────┤
-   │ Mac 固定在安全办公室                  │ 🟢 较低  │
-   │ 经常携带外出（咖啡厅/出差）           │ 🟠 较高  │
-   │ 存储敏感数据（财务/客户信息）         │ 🔴 很高  │
-   │ 需要远程重启控制（SSH/远程管理）      │ ⚪ 可接受│
+   │ Mac fixed in secure office                  │ 🟢 Low │
+   │ Frequently carried outside (cafe/travel)    │ 🟠 High│
+   │ Stores sensitive data (finance/client info) │ 🔴 V.High│
+   │ Needs remote restart control (SSH)          │ ⚪ OK   │
    └─────────────────────────────────────────────────────┘
 
-💡 建议:
-   等级: 【可选】(根据实际场景决定)
+💡 Recommendation:
+   Level: [Optional] (Decide based on your scenario)
 
-   • 如果您是因为远程控制需求而关闭 FileVault，这是合理的选择
-   • 可以通过其他方式补偿风险：
-     - 确保物理安全（Mac 放在安全地点）
-     - 定期备份重要数据
+   • If you disabled FileVault for remote control needs, this is reasonable
+   • You can compensate the risk with:
+     - Physical security (keep Mac in safe location)
+     - Regular backups of important data
 ```
 
 ### Issue Found & Fixed
 
 ```
 ========================================
-  1. Gateway 网络暴露检查
+  1. Gateway Network Exposure Check
 ========================================
 
-📌 这个检查项的作用:
-   检查 OpenClaw Gateway 是否暴露在公网
+📌 What this check protects:
+   Detects if OpenClaw Gateway is exposed to the public internet
 
-Gateway 绑定状态: *:18789 (EXPOSED!)
+Gateway Binding: *:18789 (EXPOSED!)
 
-⚡ 对您的实际影响:
+⚡ Real impact:
    ┌─────────────────────────────────────────────────────┐
-   │ 风险: 互联网上任何人都可以访问您的 AI 助手        │
-   │ 后果: API 密钥被盗用、产生意外费用、隐私泄露      │
+   │ Risk: Anyone on the internet can access your AI    │
+   │ Impact: API keys stolen, unexpected charges,       │
+   │         privacy leaked                              │
    └─────────────────────────────────────────────────────┘
 
-💡 建议:
-   等级: 【🔴 必须修复】
+💡 Recommendation:
+   Level: [🔴 Must Fix]
 
 Fix this issue? [Y/n]: Y
 
