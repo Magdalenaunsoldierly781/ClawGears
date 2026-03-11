@@ -6,7 +6,7 @@
 
 **OpenClaw Security Audit Tool - Protect your Mac, guard your privacy**[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](./LICENSE)
 [![Platform](https://img.shields.io/badge/platform-macOS-lightgrey?style=for-the-badge&logo=apple)](https://github.com/JinHanAI/ClawGears)
-[![Version](https://img.shields.io/badge/version-1.3.0-green?style=for-the-badge)](https://github.com/JinHanAI/ClawGears)
+[![Version](https://img.shields.io/badge/version-1.4.0-green?style=for-the-badge)](https://github.com/JinHanAI/ClawGears)
 
 **English** | [中文](./README.zh.md) | [Deutsch](./README.de.md) | [Français](./README.fr.md) | [Italiano](./README.it.md)
 
@@ -320,14 +320,59 @@ Check your IP at:
 [✅ PASS] No exposure detected
 ```
 
+### Context-Aware Risk Explanation (New! 🆕)
+
+ClawGears now provides **scenario-based risk analysis** instead of one-size-fits-all recommendations:
+
+```
+========================================
+  2. FileVault Encryption Check
+========================================
+
+📌 这个检查项的作用:
+   防止硬盘被盗/丢失后，他人读取您的数据
+
+FileVault Status: FileVault is Off.
+
+⚡ 对您的实际影响:
+   ┌─────────────────────────────────────────────────────┐
+   │ 使用场景                              │ 风险程度 │
+   ├─────────────────────────────────────────────────────┤
+   │ Mac 固定在安全办公室                  │ 🟢 较低  │
+   │ 经常携带外出（咖啡厅/出差）           │ 🟠 较高  │
+   │ 存储敏感数据（财务/客户信息）         │ 🔴 很高  │
+   │ 需要远程重启控制（SSH/远程管理）      │ ⚪ 可接受│
+   └─────────────────────────────────────────────────────┘
+
+💡 建议:
+   等级: 【可选】(根据实际场景决定)
+
+   • 如果您是因为远程控制需求而关闭 FileVault，这是合理的选择
+   • 可以通过其他方式补偿风险：
+     - 确保物理安全（Mac 放在安全地点）
+     - 定期备份重要数据
+```
+
 ### Issue Found & Fixed
 
 ```
 ========================================
-  Interactive Fix
+  1. Gateway 网络暴露检查
 ========================================
 
-[❌ FAIL] Gateway is exposed to public network (0.0.0.0:18789)
+📌 这个检查项的作用:
+   检查 OpenClaw Gateway 是否暴露在公网
+
+Gateway 绑定状态: *:18789 (EXPOSED!)
+
+⚡ 对您的实际影响:
+   ┌─────────────────────────────────────────────────────┐
+   │ 风险: 互联网上任何人都可以访问您的 AI 助手        │
+   │ 后果: API 密钥被盗用、产生意外费用、隐私泄露      │
+   └─────────────────────────────────────────────────────┘
+
+💡 建议:
+   等级: 【🔴 必须修复】
 
 Fix this issue? [Y/n]: Y
 

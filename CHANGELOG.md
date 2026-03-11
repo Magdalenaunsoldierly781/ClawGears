@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2026-03-11
+
+### Changed
+- **Context-Aware Risk Explanations** (重大改进)
+  - 每个检测项现在包含场景化风险评估
+  - 不再使用一刀切的"最佳实践"建议
+  - 用户可以根据自己的实际情况做出决策
+
+### Added
+- **Risk Explanation Format**: Each check now shows:
+  - 📌 检测项作用说明
+  - ⚡ 基于场景的实际影响表格
+  - 💡 分级建议（🔴必须/🟠建议/🟡可选/⚪评估后决定）
+  - 合理不修复的场景说明
+  - 替代补偿措施
+
+### Improved
+- `quick-check.sh` - 完全重写，添加场景化说明
+- `system-security-check.sh` - FileVault、SIP、防火墙检查全部更新
+- README demo section - 展示新的输出格式
+
+### Philosophy
+- **用户自主决策** > 盲目遵循"最佳实践"
+- **场景化分析** > 一刀切建议
+- **透明说明风险** > 恐吓式警告
+
 ## [1.3.0] - 2026-03-11
 
 ### Added
