@@ -15,9 +15,13 @@ Instead of one-size-fits-all "best practices", ClawGears now provides **scenario
 **Use this skill when:**
 - User asks about OpenClaw security
 - User wants to check if their AI assistant is exposed
-- User mentions "裸奔" (running exposed) or security concerns
+- User mentions "裸奔" (Chinese), "むき出し" (Japanese), "expuesto" (Spanish) or security concerns
 - User wants to audit their OpenClaw configuration
 - User asks about IP leak detection
+
+**Supported Languages:**
+ClawGears README is available in 7 languages:
+- 🇬🇧 English | 🇨🇳 中文 | 🇩🇪 Deutsch | 🇫🇷 Français | 🇮🇹 Italiano | 🇯🇵 日本語 | 🇪🇸 Español
 
 ---
 
