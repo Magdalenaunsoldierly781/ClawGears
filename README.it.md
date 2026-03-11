@@ -10,7 +10,7 @@
 [![Platform](https://img.shields.io/badge/platform-macOS-lightgrey?style=for-the-badge&logo=apple)](https://github.com/JinHanAI/ClawGears)
 [![Version](https://img.shields.io/badge/version-1.4.0-green?style=for-the-badge)](https://github.com/JinHanAI/ClawGears)
 
-[English](./README.md) | [中文](./README.zh.md) | [Deutsch](./README.de.md) | [Français](./README.fr.md) | **Italiano**
+[English](./README.md) | [中文](./README.zh.md) | [Deutsch](./README.de.md) | [Français](./README.fr.md) | **Italiano** | [日本語](./README.ja.md) | [Español](./README.es.md)
 
 </div>
 
@@ -218,7 +218,7 @@ cd clawgears
 
 ## 📚 Documentazione
 
-[English](./README.md) | [中文](./README.zh.md) | [Deutsch](./README.de.md) | [Français](./README.fr.md) | **Italiano**
+[English](./README.md) | [中文](./README.zh.md) | [Deutsch](./README.de.md) | [Français](./README.fr.md) | **Italiano** | [日本語](./README.ja.md) | [Español](./README.es.md)
 
 ---
 
