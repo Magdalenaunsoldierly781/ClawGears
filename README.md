@@ -4,11 +4,13 @@
 
 ### **Protect Your Mac, Guard Your Privacy**
 
-**OpenClaw Security Audit Tool - Protect your Mac, guard your privacy**[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](./LICENSE)
+**OpenClaw Security Audit Tool**
+
+[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](./LICENSE)
 [![Platform](https://img.shields.io/badge/platform-macOS-lightgrey?style=for-the-badge&logo=apple)](https://github.com/JinHanAI/ClawGears)
 [![Version](https://img.shields.io/badge/version-1.5.0-green?style=for-the-badge)](https://github.com/JinHanAI/ClawGears)
 
-**English** | [中文](./README.zh.md) | [Deutsch](./README.de.md) | [Français](./README.fr.md) | [Italiano](./README.it.md)
+**English** | [中文](./README.zh.md) | [Deutsch](./README.de.md) | [Français](./README.fr.md) | [Italiano](./README.it.md) | [日本語](./README.ja.md) | [Español](./README.es.md)
 
 </div>
 
